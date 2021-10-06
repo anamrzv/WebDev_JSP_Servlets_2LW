@@ -1,11 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <link rel="shortcut icon" href="img/bun.jpg">
-  <link rel="stylesheet" type="text/css" href="css/header.css">
-  <link rel="stylesheet" type="text/css" href="css/body.css">
+  <link rel="stylesheet" type="text/css" href="/css/header.css">
+  <link rel="stylesheet" type="text/css" href="/css/body.css">
   <title>Ana's Web</title>
 </head>
 
@@ -13,7 +11,6 @@
 <table id="body-table">
   <tr>
     <th class="header">
-      <a href="https://github.com/anamrzv"><img src="img/bun.jpg" title="icon" alt="icon" width="70" height="70"></a>
       <div>
         <p>Морозова Анастасия Александровна P3230</p>
         <p>Вариант 30610</p>
@@ -26,7 +23,7 @@
       <div class="graph">
           <svg height="300" width="300" xmlns="http://www.w3.org/2000/svg">
 
-            <!-- Стерлки и оси -->
+
             <line stroke="black" x1="0" y1="150" x2="300" y2="150"></line>
             <line stroke="black" x1="150" y1="0" x2="150" y2="300"></line>
             <polygon fill="black" points="150,0 144,15 156,15" stroke="black"></polygon>
@@ -79,19 +76,18 @@
                      stroke="blue"
                      points="150,150 250,150 250,200 150,200"></polygon>
 
-            <!-- Точки на графике -->
+            <!-- Здесь будут точки на графике -->
 
           </svg>
       </div>
-      <form id="coordinates-form" method="get" action="check.php">
+      <form id="coordinates-form" method="post">
         <div class="checkbox-area">
           <p>Выберите X:</p>
           <div class="x">
             <label>-3<input type="checkbox" name="x" value="-3" onclick="controlCheckbox(this)"></label>
             <label>-2<input type="checkbox" name="x" value="-2" onclick="controlCheckbox(this)"></label>
             <label>-1<input type="checkbox" name="x" value="-1" onclick="controlCheckbox(this)"></label>
-            <label>0<input type="checkbox" name="x" value="0" onclick="controlCheckbox(this)"
-                           checked></label>
+            <label>0<input type="checkbox" name="x" value="0" onclick="controlCheckbox(this)" checked></label>
             <label>1<input type="checkbox" name="x" value="1" onclick="controlCheckbox(this)"></label>
             <label>2<input type="checkbox" name="x" value="2" onclick="controlCheckbox(this)"></label>
             <label>3<input type="checkbox" name="x" value="3" onclick="controlCheckbox(this)"></label>
@@ -106,8 +102,7 @@
 
           <p>Выберите R:</p>
           <div class="r">
-            <label>1<input type="checkbox" name="r" value="1" onclick="controlCheckbox(this)"
-                           checked></label>
+            <label>1<input type="checkbox" name="r" value="1" onclick="controlCheckbox(this)" checked></label>
             <label>2<input type="checkbox" name="r" value="2" onclick="controlCheckbox(this)"></label>
             <label>3<input type="checkbox" name="r" value="3" onclick="controlCheckbox(this)"></label>
             <label>4<input type="checkbox" name="r" value="4" onclick="controlCheckbox(this)"></label>
@@ -124,7 +119,7 @@
 
   <tr>
     <th>
-      <form method="post" action="check.php">
+      <form method="post">
         <button type="submit" class="gradient-button" name="clear">Очистить</button>
       </form>
       <div class="table-area">
@@ -144,6 +139,6 @@
   </tr>
 </table>
 
-<script src="js/validate.js"></script>
+<script src="/js/validate.js"></script>
 </body>
 </html>

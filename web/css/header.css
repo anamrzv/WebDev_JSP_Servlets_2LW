@@ -1,4 +1,4 @@
-.header {
+header {
     background-color: midnightblue;
     height: 90px;
     display: flex;
@@ -20,6 +20,3 @@
     line-height: 15px;
     margin: 20px 15px;
 }
-
-
-

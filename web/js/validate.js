@@ -8,7 +8,6 @@ function validate() {
 
 function validateY() {
     let yText = document.getElementById("yField");
-    y = yText.value.replace(",", ".").trim();
     if (/^-?\d+\.?\d*$/.test(y)) {
         if (y >= 3 || y <= -5) {
             yText.setCustomValidity("Число вне допустимого диапазона");
