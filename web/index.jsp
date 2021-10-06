@@ -2,8 +2,8 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="/css/header.css">
-  <link rel="stylesheet" type="text/css" href="/css/body.css">
+  <link rel="stylesheet" type="text/css" href="css/header.css">
+  <link rel="stylesheet" type="text/css" href="css/body.css">
   <title>Ana's Web</title>
 </head>
 
@@ -139,6 +139,6 @@
   </tr>
 </table>
 
-<script src="/js/validate.js"></script>
+<script src="js/validate.js"></script>
 </body>
 </html>
