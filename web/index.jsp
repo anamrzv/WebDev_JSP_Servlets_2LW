@@ -1,9 +1,12 @@
+<%@ page import="other.ResultEntity" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="css/header.css">
   <link rel="stylesheet" type="text/css" href="css/body.css">
+  <link rel="shortcut icon" href="img/bun.jpg">
   <title>Ana's Web</title>
 </head>
 
@@ -11,6 +14,7 @@
 <table id="body-table">
   <tr>
     <th class="header">
+      <a href="https://github.com/anamrzv"><img src="img/bun.jpg" title="icon" alt="icon" width="70" height="70"></a>
       <div>
         <p>Морозова Анастасия Александровна P3230</p>
         <p>Вариант 30610</p>
@@ -80,7 +84,7 @@
 
           </svg>
       </div>
-      <form id="coordinates-form" method="post">
+      <form id="coordinates-form" method="post" action="main">
         <div class="checkbox-area">
           <p>Выберите X:</p>
           <div class="x">
@@ -133,6 +137,21 @@
             <th class="col">Время исполнения</th>
             <th class="col">Результат</th>
           </tr>
+          <%
+              List<ResultEntity> resultEntityList = (List<ResultEntity>) request.getAttribute("results");
+              if (resultEntityList!=null && !resultEntityList.isEmpty()) {
+                for (ResultEntity e : resultEntityList) {
+                  System.out.println(e);
+                  out.println("<tr><td>"+e.getX()+"</td>"+
+                          "<td>"+e.getY()+"</td>"+
+                          "<td>"+e.getR()+"</td>"+
+                          "<td>"+e.getStart()+"</td>"+
+                          "<td>"+e.getScriptTime()+"</td>"+
+                          "<td>"+e.getResult()+"</td></tr>");
+                }
+              }
+              out.println(resultEntityList);
+          %>
         </table>
       </div>
     </th>

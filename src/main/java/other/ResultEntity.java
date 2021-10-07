@@ -10,7 +10,8 @@ public class ResultEntity {
     private float y;
     private int r;
     private LocalDateTime start;
-    private LocalDateTime end;
+    private long scriptTime;
+    private String result;
 
     public ResultEntity(int x, float y, int r, LocalDateTime start) {
         this.x = x;
@@ -18,4 +19,5 @@ public class ResultEntity {
         this.r = r;
         this.start = start;
     }
+
 }
