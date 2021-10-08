@@ -1,5 +1,6 @@
 <%@ page import="other.ResultEntity" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.time.format.DateTimeFormatter" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="ru">
 <head>
@@ -138,19 +139,18 @@
             <th class="col">Результат</th>
           </tr>
           <%
+              DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss   dd.MM.yy");
               List<ResultEntity> resultEntityList = (List<ResultEntity>) request.getAttribute("results");
               if (resultEntityList!=null && !resultEntityList.isEmpty()) {
                 for (ResultEntity e : resultEntityList) {
-                  System.out.println(e);
                   out.println("<tr><td>"+e.getX()+"</td>"+
                           "<td>"+e.getY()+"</td>"+
                           "<td>"+e.getR()+"</td>"+
-                          "<td>"+e.getStart()+"</td>"+
+                          "<td>"+e.getStart().format(formatter)+"</td>"+
                           "<td>"+e.getScriptTime()+"</td>"+
                           "<td>"+e.getResult()+"</td></tr>");
                 }
               }
-              out.println(resultEntityList);
           %>
         </table>
       </div>

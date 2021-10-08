@@ -27,7 +27,7 @@ public class AreaCheckServlet extends HttpServlet {
             r = Integer.parseInt(rText.trim());
         } catch (NumberFormatException e) {
             System.out.println("Parse error:" + xText + " " + yText + " " + rText);
-            resp.sendRedirect("/main");
+            req.getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
         }
 
         long start = System.currentTimeMillis();
@@ -44,7 +44,7 @@ public class AreaCheckServlet extends HttpServlet {
 
         List<ResultEntity> results = context.getResultsInContext();
         req.setAttribute("results", results);
-        resp.sendRedirect("/main");
+        req.getServletContext().getRequestDispatcher("/jsp/result_page.jsp").forward(req, resp);
     }
 
     @Override
