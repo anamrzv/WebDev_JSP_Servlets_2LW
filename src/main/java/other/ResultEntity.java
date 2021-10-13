@@ -15,12 +15,12 @@ public class ResultEntity {
     private int xPx;
     private int yPx;
 
-    public ResultEntity(float x, float y,float r, LocalDateTime start) {
+    public ResultEntity(float x, float y, float r, LocalDateTime start) {
         this.x = x;
         this.y = y;
         this.r = r;
-        xPx = (int) ((100*this.x)/this.r+150);
-        yPx = (int) (150-(100*this.y)/this.r);
+        xPx = (int) ((100 * this.x) / this.r + 150);
+        yPx = (int) (150 - (100 * this.y) / this.r);
         this.start = start;
     }
 

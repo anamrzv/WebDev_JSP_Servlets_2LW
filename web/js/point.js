@@ -11,12 +11,9 @@ function checkPoint(event) {
     else if (document.getElementById("cb4").checked) r = 4;
     else if (document.getElementById("cb5").checked) r = 5;
     if (r != 0) {
-        event.preventDefault();
         const domRect = graph.getBoundingClientRect();
         const rowX = event.pageX - domRect.x;
-        console.log(rowX)
         const rowY = event.pageY - domRect.y;
-        console.log(rowY)
         x = ((r * (svgSize / 2 - rowX) * -1) / 100).toFixed(2);
         yCoord = ((r * (svgSize / 2 - rowY)) / 100).toFixed(2);
         sendRequest(x, yCoord, r);

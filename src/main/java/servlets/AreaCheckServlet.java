@@ -3,8 +3,6 @@ package servlets;
 import other.Context;
 import other.ResultEntity;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -35,7 +33,7 @@ public class AreaCheckServlet extends HttpServlet {
         long start = System.currentTimeMillis();
         ResultEntity newResult = new ResultEntity(x, y, r, LocalDateTime.now());
         boolean isInFigure = checkPoint(newResult);
-        newResult.setScriptTime(System.currentTimeMillis()-start);
+        newResult.setScriptTime(System.currentTimeMillis() - start);
         if (isInFigure) newResult.setResult("Попадание");
         else newResult.setResult("Промах");
 

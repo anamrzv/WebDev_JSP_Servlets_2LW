@@ -14,7 +14,7 @@ public class Context {
         resultsInContext = new ArrayList<>();
     }
 
-    public static Context getInstance(){
+    public static Context getInstance() {
         return contextInstance;
     }
 

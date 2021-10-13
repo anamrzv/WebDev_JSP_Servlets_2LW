@@ -52,9 +52,9 @@
                     %>
                 </table>
             </div>
-           <form method="post" action="main">
-                   <button type="submit" class="gradient-button">Назад</button>
-           </form>
+            <form method="post" action="main">
+                <button type="submit" class="gradient-button">Назад</button>
+            </form>
         </th>
     </tr>
 </table>
