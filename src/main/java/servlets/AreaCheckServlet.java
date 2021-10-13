@@ -3,6 +3,8 @@ package servlets;
 import other.Context;
 import other.ResultEntity;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,13 +20,13 @@ public class AreaCheckServlet extends HttpServlet {
         String xText = req.getParameter("x");
         String yText = req.getParameter("y");
         String rText = req.getParameter("r");
-        int x = 0;
+        float x = 0;
         float y = 0;
-        int r = 0;
+        float r = 0;
         try {
-            x = Integer.parseInt(xText.trim());
+            x = Float.parseFloat(xText.trim());
             y = Float.parseFloat(yText.trim());
-            r = Integer.parseInt(rText.trim());
+            r = Float.parseFloat(rText.trim());
         } catch (NumberFormatException e) {
             System.out.println("Parse error:" + xText + " " + yText + " " + rText);
             req.getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
@@ -44,7 +46,7 @@ public class AreaCheckServlet extends HttpServlet {
 
         List<ResultEntity> results = context.getResultsInContext();
         req.setAttribute("results", results);
-        req.getServletContext().getRequestDispatcher("/jsp/result_page.jsp").forward(req, resp);
+        req.getServletContext().getRequestDispatcher("/result_page.jsp").forward(req, resp);
     }
 
     @Override
@@ -61,7 +63,7 @@ public class AreaCheckServlet extends HttpServlet {
     }
 
     private boolean isInRectangle(ResultEntity result) {
-        return result.getX() <= result.getR() && result.getX() >= 0 && result.getY() <= 0 && result.getY() >= result.getR() * (-1 / 2);
+        return result.getX() <= result.getR() && result.getX() >= 0 && result.getY() <= 0 && result.getY() >= result.getR() * (-0.5);
     }
 
     private boolean isInCircle(ResultEntity result) {

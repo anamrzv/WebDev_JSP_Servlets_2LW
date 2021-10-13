@@ -1,6 +1,7 @@
 <%@ page import="other.ResultEntity" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.time.format.DateTimeFormatter" %>
+<%@ page import="other.Context" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="ru">
 <head>
@@ -35,6 +36,9 @@
                         <th class="col">Результат</th>
                     </tr>
                     <%
+                        Context context = Context.getInstance();
+                        List<ResultEntity> results = context.getResultsInContext();
+                        request.setAttribute("results", results);
                         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss   dd.MM.yy");
                         List<ResultEntity> resultEntityList = (List<ResultEntity>) request.getAttribute("results");
                         if (resultEntityList != null && !resultEntityList.isEmpty()) {
@@ -48,7 +52,9 @@
                     %>
                 </table>
             </div>
-            <a href="/main">На страницу с формой</a>
+           <form method="post" action="main">
+                   <button type="submit" class="gradient-button">Назад</button>
+           </form>
         </th>
     </tr>
 </table>
