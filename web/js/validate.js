@@ -3,7 +3,7 @@ let y;
 document.getElementById("function-btn").addEventListener("click", validate);
 
 function validate() {
-    if (!validateY()) return;
+    if (!validateY());
 }
 
 function validateY() {

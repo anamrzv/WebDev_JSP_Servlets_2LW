@@ -7,8 +7,8 @@ import java.util.List;
 
 @Getter
 public class Context {
-    private static Context contextInstance = new Context();
-    private List<ResultEntity> resultsInContext;
+    private static final Context contextInstance = new Context();
+    private final List<ResultEntity> resultsInContext;
 
     private Context() {
         resultsInContext = new ArrayList<>();

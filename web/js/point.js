@@ -10,7 +10,7 @@ function checkPoint(event) {
     else if (document.getElementById("cb3").checked) r = 3;
     else if (document.getElementById("cb4").checked) r = 4;
     else if (document.getElementById("cb5").checked) r = 5;
-    if (r != 0) {
+    if (r !== 0) {
         const domRect = graph.getBoundingClientRect();
         const rowX = event.pageX - domRect.x;
         const rowY = event.pageY - domRect.y;
